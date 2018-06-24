@@ -1,0 +1,89 @@
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm fixed-top navbar-light bg-light">
+            <button class="navbar-toggler" data-toggle="collapse" data-target="#collapse_target">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="collapse_target">
+                <ul class="mr-auto navbar-nav elevatorup">
+                <img class="elevatorup" src="http://www.localfirst.com/media/files/default/defaultelevatorup.jpg">
+                    
+                    <li class="nav-item"><a class="navbar-brand col-3 nav-link" href="#">The Past & The Future</a></li>
+                </ul>
+                <ul class="ml-auto navbar-nav">
+                    <li class="nav-item"><a class="navbar-brand col-3 nav-link" href="#">About Us</a></li>
+                    <li class="nav-item"><a class="navbar-brand col-3 nav-link" href="#">Contact</a></li>
+                    <li class="nav-item"><a class="navbar-brand col-3 nav-link" href="#">Our Team</a></li>
+                </ul>
+            </div>
+            </nav>
+    </header>
+    <div class="backgroundSkew">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 col-xs-12" id="main_text">
+                    <h1>Remembering the Past</h1>
+                    <h2>To Build The Future</h1>
+                    <p>Our newsletter is a weekly digest of our best blog content, a roundup of our favorite design links from the week, and a new opportunity to win a free t-shirt.</p>
+
+                    <p>Not only is our newsletter a great mix of content, but we also love nice balance between images and text, making it easy to read and mobile-friendly. We make great use of animated GIFs in our emails.</p>
+                </div>
+                <div class="col-sm-6">
+                    <img class="btf collapsing" id="collapse_img" src= "https://mholloway63.files.wordpress.com/2015/07/2014-08-06-backtothefuture.jpg">
+                </div>
+                
+                <div class="form-group col-12" id="email_capture">
+                <form>
+                    <label for="exampleFormControlInput1"><i class="fas fa-envelope"></i> Join the funnest newsletter around:</label>
+                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com"><span>
+                    <button type="submit" class="btn btn-primary" id="submit_button">Submit</button></span>
+                    <p>*To see more click <a target="_blank" href="http://www.elevatorup.com">here!</a></p>
+                </form>
+                </div>
+                
+            </div>
+            
+        </div>
+    </div>
+    <div class="next">
+    </div>
+    <div class="container reviews">
+    <div class="row">
+    <div class="seemore col-12">
+                <h3> See what our readers are saying: </h3>
+            </div>
+            <div class="col-6">
+            <img class="img-fluid" id="collapsing" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRv1CNdPIXQl47b542TiJ_43h8gTRgRuO2ueSVyjnJ5ZDXecyafOg">
+      </div>
+    <div class="col-lg-6 col-md-12">
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Review</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @comments.each do |comment| %>
+      <tr>
+        <td><%= comment.name %></td>
+        <td><%= comment.content %></td>
+        <td><%= link_to 'Show', comment %></td>
+        <td><%= link_to 'Edit', edit_comment_path(comment) %></td>
+        <td><%= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<button class="btn btn-outline-primary"><%= link_to 'New Comment', new_comment_path %></button>
+</div>
+
+</div>
+</div>
+</body>
